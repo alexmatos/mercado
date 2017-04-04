@@ -361,3 +361,249 @@ Stack Trace:
 #21 {main}
 
 
+2017-04-04 14:08:41 Error: [PDOException] SQLSTATE[HY000] [2002] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente.
+
+Request URL: /produtos
+Stack Trace:
+#0 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Database\Driver\PDODriverTrait.php(47): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Database\Driver\Mysql.php(104): Cake\Database\Driver\Mysql->_connect('mysql:host=loca...', Array)
+#2 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Database\Schema\BaseSchema.php(45): Cake\Database\Driver\Mysql->connect()
+#3 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Database\Dialect\MysqlDialectTrait.php(63): Cake\Database\Schema\BaseSchema->__construct(Object(Cake\Database\Driver\Mysql))
+#4 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(52): Cake\Database\Driver\Mysql->schemaDialect()
+#5 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(42): Cake\Database\Schema\Collection->__construct(Object(Cake\Database\Connection))
+#6 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Database\Connection.php(367): Cake\Database\Schema\CachedCollection->__construct(Object(Cake\Database\Connection), true)
+#7 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\ORM\Table.php(530): Cake\Database\Connection->getSchemaCollection()
+#8 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\ORM\Query.php(210): Cake\ORM\Table->getSchema()
+#9 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\ORM\Query.php(167): Cake\ORM\Query->addDefaultTypes(Object(App\Model\Table\ProdutosTable))
+#10 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\ORM\Table.php(1569): Cake\ORM\Query->__construct(Object(Cake\Database\Connection), Object(App\Model\Table\ProdutosTable))
+#11 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\ORM\Table.php(1171): Cake\ORM\Table->query()
+#12 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\src\Controller\ProdutosController.php(16): Cake\ORM\Table->find('all')
+#13 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Controller\Controller.php(440): App\Controller\ProdutosController->index()
+#14 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(119): Cake\Controller\Controller->invokeAction()
+#15 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\ProdutosController))
+#16 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#18 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#19 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#20 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#21 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#22 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#23 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#24 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#25 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#26 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\webroot\index.php(37): Cake\Http\Server->run()
+#27 {main}
+
+
+2017-04-04 14:11:40 Error: [PDOException] SQLSTATE[HY000] [1049] Unknown database 'estoque'
+Request URL: /produtos
+Stack Trace:
+#0 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Database\Driver\PDODriverTrait.php(47): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Database\Driver\Mysql.php(104): Cake\Database\Driver\Mysql->_connect('mysql:host=loca...', Array)
+#2 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Database\Schema\BaseSchema.php(45): Cake\Database\Driver\Mysql->connect()
+#3 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Database\Dialect\MysqlDialectTrait.php(63): Cake\Database\Schema\BaseSchema->__construct(Object(Cake\Database\Driver\Mysql))
+#4 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(52): Cake\Database\Driver\Mysql->schemaDialect()
+#5 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(42): Cake\Database\Schema\Collection->__construct(Object(Cake\Database\Connection))
+#6 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Database\Connection.php(367): Cake\Database\Schema\CachedCollection->__construct(Object(Cake\Database\Connection), true)
+#7 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\ORM\Table.php(530): Cake\Database\Connection->getSchemaCollection()
+#8 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\ORM\Query.php(210): Cake\ORM\Table->getSchema()
+#9 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\ORM\Query.php(167): Cake\ORM\Query->addDefaultTypes(Object(App\Model\Table\ProdutosTable))
+#10 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\ORM\Table.php(1569): Cake\ORM\Query->__construct(Object(Cake\Database\Connection), Object(App\Model\Table\ProdutosTable))
+#11 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\ORM\Table.php(1171): Cake\ORM\Table->query()
+#12 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\src\Controller\ProdutosController.php(16): Cake\ORM\Table->find('all')
+#13 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Controller\Controller.php(440): App\Controller\ProdutosController->index()
+#14 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(119): Cake\Controller\Controller->invokeAction()
+#15 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\ProdutosController))
+#16 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#18 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#19 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#20 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#21 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#22 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#23 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#24 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#25 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#26 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\webroot\index.php(37): Cake\Http\Server->run()
+#27 {main}
+
+
+2017-04-04 14:48:21 Error: [Cake\Routing\Exception\MissingControllerException] Controller class â€produtos could not be found.
+Exception Attributes: array (
+  'class' => 'â€produtos',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /%E2%80%9Dprodutos/novo%E2%80%9D
+Referer URL: http://localhost:8765/produtos
+Stack Trace:
+#0 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(65): Cake\Http\ControllerFactory->missingController(Object(Cake\Http\ServerRequest))
+#1 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(90): Cake\Http\ControllerFactory->create(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#2 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#4 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-04-04 14:54:29 Error: [Cake\View\Exception\MissingTemplateException] Template file "Produtos\novo.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Produtos\\novo.ctp',
+)
+Request URL: /produtos/novo?controler=produtos
+Referer URL: http://localhost:8765/produtos
+Stack Trace:
+#0 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\View\View.php(592): Cake\View\View->_getViewFileName('Produtos\\novo')
+#1 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Controller\Controller.php(623): Cake\View\View->render(NULL, NULL)
+#2 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(125): Cake\Controller\Controller->render()
+#3 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\ProdutosController))
+#4 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#14 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\webroot\index.php(37): Cake\Http\Server->run()
+#15 {main}
+
+
+2017-04-04 15:03:52 Error: [Cake\View\Exception\MissingTemplateException] Template file "Produtos\novo.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Produtos\\novo.ctp',
+)
+Request URL: /produtos/novo?controler=produtos
+Referer URL: http://localhost:8765/produtos
+Stack Trace:
+#0 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\View\View.php(592): Cake\View\View->_getViewFileName('Produtos\\novo')
+#1 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Controller\Controller.php(623): Cake\View\View->render(NULL, NULL)
+#2 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(125): Cake\Controller\Controller->render()
+#3 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\ProdutosController))
+#4 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#14 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\webroot\index.php(37): Cake\Http\Server->run()
+#15 {main}
+
+
+2017-04-04 17:13:25 Error: [Cake\Controller\Exception\MissingActionException] Action ProdutosController::salva() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'ProdutosController',
+  'action' => 'salva',
+  'prefix' => '',
+  'plugin' => false,
+)
+Request URL: /produtos/salva
+Referer URL: http://localhost:8765/produtos/novo?controler=produtos
+Stack Trace:
+#0 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(119): Cake\Controller\Controller->invokeAction()
+#1 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\ProdutosController))
+#2 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#4 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\webroot\index.php(37): Cake\Http\Server->run()
+#13 {main}
+
+
+2017-04-04 17:19:33 Error: [Cake\View\Exception\MissingHelperException] Helper class MoneyHelperHelper could not be found.
+Exception Attributes: array (
+  'class' => 'MoneyHelperHelper',
+  'plugin' => NULL,
+)
+Request URL: /produtos/
+Stack Trace:
+#0 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Core\ObjectRegistry.php(91): Cake\View\HelperRegistry->_throwMissingClassError('MoneyHelper', NULL)
+#1 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\View\HelperRegistry.php(67): Cake\Core\ObjectRegistry->load('MoneyHelper')
+#2 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\View\View.php(904): Cake\View\HelperRegistry->__isset('MoneyHelper')
+#3 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\src\Template\Produtos\index.ctp(19): Cake\View\View->__get('MoneyHelper')
+#4 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\View\View.php(1011): include('D:\\Usuarios\\ale...')
+#5 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\View\View.php(972): Cake\View\View->_evaluate('D:\\Usuarios\\ale...', Array)
+#6 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\View\View.php(596): Cake\View\View->_render('D:\\Usuarios\\ale...')
+#7 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Controller\Controller.php(623): Cake\View\View->render(NULL, NULL)
+#8 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(125): Cake\Controller\Controller->render()
+#9 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\ProdutosController))
+#10 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#16 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#18 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#19 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#20 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\webroot\index.php(37): Cake\Http\Server->run()
+#21 {main}
+
+
+2017-04-04 17:29:31 Error: [Error] Call to undefined function calculaDesconto() in D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\src\Template\Produtos\index.ctp on line 20
+Request URL: /produtos/
+Stack Trace:
+#0 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\View\View.php(1011): include()
+#1 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\View\View.php(972): Cake\View\View->_evaluate('D:\\Usuarios\\ale...', Array)
+#2 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\View\View.php(596): Cake\View\View->_render('D:\\Usuarios\\ale...')
+#3 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Controller\Controller.php(623): Cake\View\View->render(NULL, NULL)
+#4 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(125): Cake\Controller\Controller->render()
+#5 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\ProdutosController))
+#6 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\webroot\index.php(37): Cake\Http\Server->run()
+#17 {main}
+
+
+2017-04-04 17:29:53 Error: [Error] Call to undefined function calculaDesconto() in D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\src\Template\Produtos\index.ctp on line 21
+Request URL: /produtos/
+Stack Trace:
+#0 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\View\View.php(1011): include()
+#1 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\View\View.php(972): Cake\View\View->_evaluate('D:\\Usuarios\\ale...', Array)
+#2 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\View\View.php(596): Cake\View\View->_render('D:\\Usuarios\\ale...')
+#3 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Controller\Controller.php(623): Cake\View\View->render(NULL, NULL)
+#4 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(125): Cake\Controller\Controller->render()
+#5 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\ProdutosController))
+#6 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 D:\Usuarios\alex.matos\Documents\NetBeansProjects\mercado\webroot\index.php(37): Cake\Http\Server->run()
+#17 {main}
+
+

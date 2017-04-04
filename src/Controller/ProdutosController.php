@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controller;
+
 use Cake\ORM\TableRegistry;
 
 /**
@@ -9,14 +10,29 @@ use Cake\ORM\TableRegistry;
  * @author alex
  */
 class ProdutosController extends AppController {
-    
+
     public function index() {
-        
         $produtosTable = TableRegistry::get('Produtos');
         $produtos = $produtosTable->find('all');
-        
-//        $produtos[] = ['id'=>1,'nome'=>'HD externo', 'preco'=>300, 'descricao'=>'HD novo'];
-//        $produtos[] = ['id'=>2,'nome'=>'Monitor 22\"', 'preco'=>600, 'descricao'=>'Ótimo monitor'];        
         $this->set("produtos", $produtos);
     }
+
+    public function novo() {
+        $produtosTable = TableRegistry::get('Produtos');
+        $produtos = $produtosTable->newEntity();
+        $this->set("produtos", $produtos);
+    }
+
+    public function salva() {
+        $produtosTable = TableRegistry::get('Produtos');
+        $dado = $this->request->data();
+        $produto = $produtosTable->newEntity($dado);
+        if ($produtosTable->save($produto)) {
+            $msg = "Produto salvo com sucesso!";
+        } else {
+            $msg = "Erro ao salvar produto!";
+        }
+        $this->set('msg', $msg);
+    }
+
 }
