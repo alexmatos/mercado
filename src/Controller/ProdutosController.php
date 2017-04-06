@@ -19,8 +19,8 @@ class ProdutosController extends AppController {
 
     public function novo() {
         $produtosTable = TableRegistry::get('Produtos');
-        $produtos = $produtosTable->newEntity();
-        $this->set("produtos", $produtos);
+        $produto = $produtosTable->newEntity();
+        $this->set("produto", $produto);
     }
 
     public function salva() {
@@ -29,10 +29,31 @@ class ProdutosController extends AppController {
         $produto = $produtosTable->newEntity($dado);
         if ($produtosTable->save($produto)) {
             $msg = "Produto salvo com sucesso!";
+            $this->Flash->set($msg, ['element'=>'success']);
         } else {
             $msg = "Erro ao salvar produto!";
+            $this->Flash->set($msg, ['element'=>'error']);
         }
-        $this->set('msg', $msg);
+        $this->redirect('Produtos/index');
+    }
+
+    public function editar($id) {
+        $produtosTable = TableRegistry::get('Produtos');
+        $produto = $produtosTable->get($id);
+        $this->set('produto', $produto);
+        $this->render('novo');
+    }
+
+    public function apagar($id) {
+        $produtosTable = TableRegistry::get('Produtos');
+        $produto = $produtosTable->get($id);
+        if($produtosTable->delete($produto)){
+            $msg = "Produto removido com sucesso!";
+        } else {
+            $msg = "Não foi possível remover o produto!";
+        }
+        $this->Flash->set($msg, ['element'=>'error']);
+        $this->redirect('produtos/index');
     }
 
 }

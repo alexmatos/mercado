@@ -10,7 +10,7 @@ echo $this->Html->Link('Novo Produto', ['controler' => 'produtos', 'action' => '
             <th>Preço</th>
             <th>Preço com desconto</th>
             <th>Descrição</th>
-            <th>Descrição</th>
+            <th>Ações</th>
         </tr>
     </thead>
     <tbody>
@@ -21,7 +21,10 @@ echo $this->Html->Link('Novo Produto', ['controler' => 'produtos', 'action' => '
                 <td><?= $this->Money->format($produto['preco']) ?></td>
                 <td><?= $this->Money->format($produto->calculaDesconto()); ?></td>
                 <td><?= $produto['descricao'] ?></td>
-                <td><?= $this->Html->('Editar', ['action' => 'editar']); ?></td>
+                <td><?= $this->Html->Link('Editar', ['action' => 'editar', $produto['id']]); ?>
+                    <?= $this->Form->PostLink('Apagar', ['action' => 'apagar', $produto['id']], 
+                            ['confirm' => 'Deseja realmente apagar o produto ' . $produto['nome'] . '?']);?></td>
+
             </tr>
         <?php } ?>
     </tbody>
